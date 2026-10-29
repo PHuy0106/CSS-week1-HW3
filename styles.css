@@ -1,0 +1,127 @@
+/* ---------- Base ---------- */
+:root {
+  --pine: #1f3a2e;
+  --leaf: #3d8660;
+  --mist: #e8efe9;
+  --ink: #14231c;
+  --sun: #f2b705;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--mist);
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--pine); line-height: 1.2; }
+h1 { font-size: 2.6rem; margin: 0 0 .5rem; }
+main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+.lead { max-width: 60ch; font-size: 1.1rem; }
+
+/* ---------- Skip link (position + :focus) ---------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  padding: .75rem 1.25rem;
+  background: var(--sun);
+  color: var(--ink);
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+  z-index: 100;
+}
+.skip-link:focus { top: 0; }
+
+/* ---------- Header and navigation (flex) ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--pine);
+}
+.brand { margin: 0; font-family: Georgia, serif; font-size: 1.6rem; color: #fff; }
+.nav-list { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.nav-list a {
+  display: block;
+  padding: .55rem 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+.nav-list a:hover { background: var(--leaf); }
+.nav-list a[aria-current="page"] { background: var(--sun); color: var(--ink); font-weight: bold; }
+a:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.nav-list a:focus-visible { outline-color: #fff; }
+
+/* ---------- Images (box model) ---------- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 8px;
+  background: #fff;
+  border: 4px solid var(--pine);
+  border-radius: 16px;
+}
+
+/* ---------- Hero (grid, 2 columns) ---------- */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin-bottom: 3rem; }
+.button {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .75rem 1.5rem;
+  background: var(--pine);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform .2s, background-color .2s;
+}
+.button:hover { background: var(--leaf); transform: translateY(-3px); }
+
+/* ---------- Cards (flex) ---------- */
+.card-row { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.card {
+  flex: 1 1 250px;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-left: 8px solid var(--leaf);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.card h2, .card h3 { margin-top: 0; }
+
+/* ---------- Gallery (grid, 3 columns) ---------- */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+.gallery figure { margin: 0; }
+.gallery figcaption { margin-top: .5rem; text-align: center; font-weight: bold; }
+.gallery img { transition: transform .3s, box-shadow .3s; }
+.gallery img:hover { transform: scale(1.06) rotate(-2deg); box-shadow: 0 10px 24px rgba(20, 35, 28, .35); }
+
+/* ---------- Photo row (flex + nth-child) ---------- */
+.photo-row { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.photo-row img { flex: 1 1 220px; border-radius: 12px; }
+.photo-row img:nth-child(even) { border-radius: 60px 12px 60px 12px; border-color: var(--leaf); }
+.photo-row img:nth-child(odd):hover { border-color: var(--sun); }
+
+/* ---------- Footer ---------- */
+.site-footer { padding: 1.5rem; text-align: center; color: #fff; background: var(--pine); }
+.site-footer p { margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .gallery { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

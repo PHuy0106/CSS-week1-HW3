@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="monstera">
+<rect width="600" height="450" fill="#dbe9df"/>
+<ellipse cx="300" cy="400" rx="130" ry="14" fill="#000" opacity=".12"/>
+<ellipse cx="215" cy="240" rx="60" ry="38" fill="#2f6b4a" transform="rotate(-35 215 240)"/><ellipse cx="385" cy="240" rx="60" ry="38" fill="#2f6b4a" transform="rotate(35 385 240)"/><ellipse cx="300" cy="180" rx="60" ry="38" fill="#3d8660" transform="rotate(90 300 180)"/><ellipse cx="250" cy="160" rx="60" ry="38" fill="#3d8660" transform="rotate(-60 250 160)"/><ellipse cx="350" cy="160" rx="60" ry="38" fill="#2f6b4a" transform="rotate(60 350 160)"/><path d="M300 310 V200" stroke="#1f4a33" stroke-width="6"/>
+<path d="M215 315 H385 L365 400 H235 Z" fill="#c8553d"/>
+<rect x="205" y="302" width="190" height="22" rx="6" fill="#c8553d"/>
+<rect x="205" y="302" width="190" height="7" rx="3" fill="#fff" opacity=".18"/>
+</svg>
